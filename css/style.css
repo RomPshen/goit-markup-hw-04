@@ -7,6 +7,7 @@
   --background-color: #f5f5f5;
   --background-section-color: #f5f4fa;
   --background-hero-footer-color: #2f303a;
+  --fill-icons-color: #AFB1B8;
   --primary-text-family: Roboto, sans-serif;
   --secondary-text-family: Raleway;
   --card-set-gap: 30px;
@@ -98,6 +99,24 @@ body {
   color: var(--primary-text-color);
 }
 
+.link-cont.envelope::before {
+  content: "";
+  width: 16px;
+  height: 12px;
+  background-image: url(../images/icons.svg#icon-envelope);
+  background-size: contain;
+  margin-right: 10px;
+  }
+
+  .link-cont.phone::before {
+    content: "";
+    width: 10px;
+    height: 16px;
+    background-image: url(../images/icons.svg#icon-smartphone);
+    background-size: contain;
+    margin-right: 10px;
+    }
+
 .link-cont {
   color: var(--description-text-color);
 }
@@ -129,11 +148,11 @@ body {
   margin-left: auto;
 }
 
+
 /* головна сторінка*/
 
 /*hero*/
 .hero {
-  background-color: var(--background-hero-footer-color);
   text-align: center;
 
   padding-top: 200px;
@@ -141,7 +160,12 @@ body {
   
   max-width: 1600px;
   height: 600px;
-  background-image: url("../images/hero.jpg");
+  margin: auto;
+  background-image: linear-gradient(
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)), 
+    url("../images/hero.jpg");
+  background-color: #C4C4C4;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -160,7 +184,7 @@ body {
   margin-bottom: 30px;
 }
 
-.button.hero {
+.hero .button {
   color: var(--hero-text-color);
   background-color: #2196f3;
   font-weight: 700;
@@ -210,6 +234,24 @@ body {
   line-height: 1.71;
 }
 
+.features .section::before {
+  display: block;
+  content: "";
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--background-section-color);
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.section.antenna::before {
+  background-image: url('../images/icons.svg#icon-antenna');
+}
+
+
+
 /* Зайнятість, наша команда*/
 
 .business .section:not(:last-child) {
@@ -246,11 +288,19 @@ body {
   flex-basis: calc(100% / 4 - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
+
+  background-color: var(--hero-text-color);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+  0px 1px 1px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
 
 .team-card {
   padding: 30px 32px;
 }
+  
 
 .team-name {
   font-weight: 500;
@@ -274,6 +324,8 @@ body {
 .social-list {
   display: flex;
   justify-content: space-between;
+  
+  width: 206px;
 }
 
 .social-list-link {
@@ -282,15 +334,22 @@ body {
   align-items: center;
   width: 44px;
   height: 44px;
-  background-color: #FFFFFF; /* delete*/
   border-radius: 50%;
+}
+
+.social-list-icon {
+  fill:  var(--fill-icons-color);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
 }
 
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
-   fill: var(--accent-color);
+  fill: var(--hero-text-color);
 }
-
 
 /*---Portfolio---*/
 /*filter*/
@@ -402,3 +461,40 @@ body {
   margin-top: 12px;
   margin-bottom: 12px;
 }
+
+.footer .container {
+  display: flex;
+}
+
+.footer-addres {
+  margin-right: 70px;
+}
+
+.title-footer-link {
+  color: var(--hero-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  padding-top: 12px;
+  }
+
+  .footer-link .social-list-icon {
+    fill: var(--hero-text-color);
+  }
+
+.footer-link .social-list-link {
+  background-color:  rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-link .social-list-link:hover,
+  .footer-link .social-list-link:focus {
+    background-color: var(--accent-color);
+  }
+
+
