@@ -83,8 +83,8 @@ body {
   display: flex;
 }
 
-.navigation-item-link,
-.contact-item-link {
+.navigation .item,
+.contact .item {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -95,11 +95,16 @@ body {
   text-decoration: none;
 }
 
-.link-nav {
+.navigation-item-link {
   color: var(--primary-text-color);
+  padding: 0;
 }
 
 .contact-item-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   color: var(--description-text-color);
 }
 
@@ -130,17 +135,19 @@ body {
   margin-left: auto;
 }
 
+.contact-item-link {
+  display: flex;
+}
+
 .contact-item-link-icon {
   fill: var(--fill-icons-color);
+
+  margin-right: 10px;
 }
 
-.contact-item-link:hover .contact-item-link-icon,
-.contact-item-link:focus .contact-item-link-icon {
+.contact-item-link-icon:hover,
+.contact-item-link-icon:focus {
   fill: var(--accent-color);
-}
-
-.contact-item-link-info {
-  padding-left: 10px;
 }
 
 /* головна сторінка*/
@@ -233,9 +240,7 @@ body {
   display: flex;
 }
 
-.feature-picture-item {
-  display: flex;
-  width: 270px;
+.feature-picture {
   height: 120px;
   background: var(--background-section-color);
   border-radius: 4px;
@@ -248,7 +253,6 @@ body {
 .feature-picture-item:not(:last-child) {
   margin-right: 30px;
 }
-
 
 /* Зайнятість, наша команда*/
 
@@ -319,8 +323,6 @@ body {
 .social-list {
   display: flex;
   justify-content: space-between;
-
-  width: 206px;
 }
 
 .social-list-link {
@@ -426,6 +428,7 @@ body {
   font-weight: 500;
   line-height: 1.63;
   border-radius: 4px;
+  border-width: 0;
 
   padding: 6px 22px;
 }
@@ -434,9 +437,8 @@ body {
 .button:focus {
   color: var(--hero-text-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
-  0px 1px 2px rgba(0, 0, 0, 0.08), 
-  0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /*приклади робіт*/
@@ -448,7 +450,7 @@ body {
   margin-top: calc(-1 * var(--card-set-gap));
 }
 
-.card-set > .item {
+.card-set .item {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
@@ -478,10 +480,10 @@ body {
   border-bottom: 1px solid #eeeeee;
 }
 
-.card-set .item:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
-  0px 4px 4px rgba(0, 0, 0, 0.06), 
-  1px 4px 6px rgba(0, 0, 0, 0.16);
+.card-set .item:hover,
+.card-set .item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /*футер*/
@@ -522,6 +524,7 @@ body {
 
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-addres {
@@ -538,8 +541,8 @@ body {
   margin-bottom: 20px;
 }
 
-.footer-link {
-  padding-top: 12px;
+.footer-link .social-list-item:not(:last-child) {
+  padding-right: 10px;
 }
 
 .footer-link .social-list-icon {
