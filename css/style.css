@@ -101,9 +101,7 @@ body {
 }
 
 .contact-item-link {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
 
   color: var(--description-text-color);
 }
@@ -140,7 +138,7 @@ body {
 }
 
 .contact-item-link-icon {
-  fill: var(--fill-icons-color);
+  fill: currentColor;
 
   margin-right: 10px;
 }
@@ -329,6 +327,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -480,8 +479,12 @@ body {
   border-bottom: 1px solid #eeeeee;
 }
 
-.card-set .item:hover,
-.card-set .item:focus {
+.card-set-item-link {
+  display: block;
+}
+
+.card-set-item-link:hover,
+.card-set-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -542,7 +545,7 @@ body {
 }
 
 .footer-link .social-list-item:not(:last-child) {
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .footer-link .social-list-icon {
